@@ -19,4 +19,11 @@ public class WikipediaTest {
 	public void tearDown(){
 		driver.quit();
 	}
+	
+	@Test
+	public void SearchTest(){
+		MainPage main = new MainPage(driver);
+		TestPage test = main.search("test");
+		assertTrue(test.getFirstHeading().contains("Test"));
+	}
 }
